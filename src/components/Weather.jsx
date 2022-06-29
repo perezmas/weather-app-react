@@ -1,4 +1,4 @@
-import React, {Input, useState} from "react";
+import React, {useState} from "react";
 import axios from 'axios';
 
 const Weather = () => {
@@ -16,25 +16,35 @@ const Weather = () => {
     }
 
     return (
-        <div>
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-10">
             <div>
-                <input
-                    type="text"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    onKeyPress={searchLocation}
-                    placeholder="Enter City"
-                />
+                <div className="flex justify-center">
+                    <input
+                        type="text"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        onKeyPress={searchLocation}
+                        placeholder="Enter City"
+                        className="text-black bg-white/20 rounded text-4xl py-5"
+                    />
+                </div>
             </div>
-            <div>
-                {data.main ? 
-                <h1>Location: {data.name}</h1>
-                 : null
-                }
-                {data.main ? 
-                <h1>Country: {data.sys.country}</h1>
-                 : null
-                }
+            <div className="flex bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+                <div className="flex grid grid-cols-2">
+                    <div>
+                        {data.main ?
+                            <h1>{data.name}</h1>
+                            : null
+                        }
+
+                    </div>
+                    <div>
+                        {data.main ?
+                            <h1>Country: {data.sys.country}</h1>
+                            : null
+                        }
+                    </div>
+                </div>
                 {data.main ? 
                 <h1>Temperature: {Math.round(data.main.temp)}°F</h1>
                  : null
