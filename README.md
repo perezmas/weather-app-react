@@ -1,5 +1,5 @@
 # Weather App
-A weather app that displays current weather data based on user's provided location.
+A weather app that displays current weather data based on the location provided by the user.
 
 # Tools Used
 - JavaScript
