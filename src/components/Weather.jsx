@@ -22,7 +22,7 @@ const Weather = () => {
     const current = new Date();
 
     return (
-        <div className="flex-auto bg-gradient-to-r from-cyan-500 to-blue-500 py-10">
+        <div className="flex-auto bg-gradient-to-r from-cyan-500 to-blue-500 py-10 h-screen overflow-hidden">
             <div>
                 <div className="flex justify-center">
                     <input
@@ -39,10 +39,10 @@ const Weather = () => {
 
             </div>
             <div className="flex bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-4">
-                <div className="justify-left w-1/2 text-left text-6xl px-5">
-                    <div className="flex">
+                <div className="shrink justify-left w-1/2 text-left text-6xl px-5">
+                    <div>
                         {data.main ?
-                            <h1>{current.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', })}</h1>
+                            <h1 className="">{current.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', })}</h1>
                             : null
                         }
                     </div>
@@ -69,40 +69,49 @@ const Weather = () => {
                     </div>
                 </div>
             </div>
-            <div className="sm:w-[90%] w-full h-[0.25px] bg-white mt-5" />
-            <div className="flex text-4xl text-left  font-medium">
-                <ul className="flex flex-row justify-center text-4xl text-white">
-                    {data.main ?
-                        <h1>Temperature: <br/>{Math.round(data.main.temp)}°F</h1>
-                        : null
-                    }
-                    {data.main ?
-                        <h1>High of <br/>{Math.round(data.main.temp_max)}°F</h1>
-                        : null
-                    }
-                    {data.main ?
-                        <h1>Low of <br/>{Math.round(data.main.temp_min)}°F</h1>
-                        : null
-                    }
-                    {data.main ?
-                        <h1>Feels Like <br/>{Math.round(data.main.feels_like)}°F</h1>
-                        : null
-                    }
-                </ul>
+            <div className="sm:w-[100%] w-full h-[0.25px] bg-white mt-5" />
+            <div className="text-4xl text-left font-medium py-4">
+                <div className="flex justify-evenly text-4xl text-white">
+                    <div className="flex-none text-4xl">
+                        {data.main ?
+                            <h1>Temperature: <br />{Math.round(data.main.temp)}°F</h1>
+                            : null
+                        }
+                    </div>
+                   <div>
+
+                   </div>
+                    <div className="flex-none text-4xl">
+                        {data.main ?
+                            <h1>Feels Like: <br />{Math.round(data.main.feels_like)}°F</h1>
+                            : null
+                        }
+                    </div>
+                </div>
             </div>
-            <div className="bg-gradient-to-r from-white to-blue-500">
+            <div className="flex flex-row justify-evenly text-3xl text-white py-3 bg-gradient-to-r from-amber-500 to-red-500 rounded-lg mx-5">
+                <div className="flex-col">
                 {data.main ?
-                    <h1>{data.weather[0].description}</h1>
+                    <h1>{data.weather[0].main}</h1>
                     : null
                 }
+                <h1 className="text-xl">Looks like:</h1>
+                </div>
+                <div className="flex-col">
                 {data.main ?
-                    <h1>Humidity: {data.main.humidity}%</h1>
+                    <h1>{data.main.humidity}%</h1>
                     : null
                 }
+                <h1 className="text-xl">Humidity:</h1>
+                </div>
+                <div className="flex-col">
                 {data.main ?
-                    <h1>Wind Speed: {data.main.humidity}MPH</h1>
+                    <h1>{data.main.humidity}MPH</h1>
                     : null
                 }
+                <h1 className="text-xl">Wind Speed:</h1>
+                </div>
+                
             </div>
         </div>
     );
