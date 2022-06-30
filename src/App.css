@@ -7,6 +7,27 @@
   pointer-events: none;
 }
 
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #e8e8e8;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #e8e8e8;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #e8e8e8;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #e8e8e8;
+}
+
+:placeholder {
+  color: #ffffff;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

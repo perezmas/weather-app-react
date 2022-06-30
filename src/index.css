@@ -5,12 +5,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%
+}
+
+input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: white;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #e8e8e8;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #e8e8e8;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #e8e8e8;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #e8e8e8;
 }
 
 ::placeholder {
-  color: white;
-  opacity: 1;
+  color: #e8e8e8;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
