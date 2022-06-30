@@ -5,7 +5,7 @@ A weather app that displays current weather data based on the location provided 
 - JavaScript
 - React
 - TailwindCSS
-- OpenWeatherAPI (https://openweathermap.org/current#multi)
+- OpenWeatherMapAPI (https://openweathermap.org/current#multi)
 - Axios
 
 # What I Learned
